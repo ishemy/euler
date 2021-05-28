@@ -1,3 +1,3 @@
 # euler
-project euler problems
+Project euler problems/
 Problems solved: 3
