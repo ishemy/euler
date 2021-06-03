@@ -20,7 +20,7 @@ def smallest_even_div(n):
 
     smallest = large
     while (is_even_div(smallest, n)):
-        smallest /= n
+        smallest /= 2
 
     return smallest
 
@@ -32,4 +32,4 @@ def is_even_div(n, maximum):
 
 
 print (even_div_naive(20))
-print (smallest_even_div(20))
+# print (smallest_even_div(20))
