@@ -1,11 +1,13 @@
 import math
 
-def longest_3d_palindrome():
-    maximum = 999*999
+# O(n^2)
+def longest_palindrome(digits):
+    lower = 10**(digits-1)
+    higher = lower * 10
     nums = []
 
-    for i in reversed(range(100, 1000)):
-        for j in reversed(range(100, 1000)):
+    for i in reversed(range(lower, higher)):
+        for j in reversed(range(lower, higher)):
             nums.append(i*j)
 
     nums.sort(reverse=True)
@@ -16,6 +18,7 @@ def longest_3d_palindrome():
 
     return 0
 
+# O(log n)
 def is_palindrome(n):
     digs = 0
     temp = n
@@ -31,7 +34,8 @@ def is_palindrome(n):
     else:
         rhs = str(n)[:(digs/2):-1]
 
-    print("lhs: ", lhs, " rhs: ", rhs)
     if lhs == rhs: return True
     else: return False
 
+
+print(longest_palindrome(3))
