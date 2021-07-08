@@ -7,23 +7,25 @@ def grid_product(numstring, p):
     grid = create_grid(numstring)
     n = len(grid)
 
-    for r in range (n - p + 1):
-        for c in range (n - p + 1):
+    for r in range (n):
+        for c in range (n):
             hor = 1
             ver = 1
             ldia = 1
             rdia = 1
 
             for i in range(p):
-                hor *= grid[r][c+i]
-                ver *= grid[r+i][c]
-                ldia *= grid[r+i][c+i]
-                rdia *= grid[r+i][c+p-i-1]
+                if c <= n-p: hor *= grid[r][c+i]
+                if r <= n-p: ver *= grid[r+i][c]
+                if r <= n-p and c <= n-p:
+                    ldia *= grid[r+i][c+i]
+                    rdia *= grid[r+i][c+p-i-1]
 
             if hor > largest: largest = hor
             if ver > largest: largest = ver
             if ldia > largest: largest = ldia
             if rdia > largest: largest = rdia
+
 
     return largest
 
