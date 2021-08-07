@@ -2,29 +2,29 @@ from math import sqrt
 
 # naive solution
 def first_triangle_with_div(n):
+    next_triangle = 1
     m = 1
 
-    while (num_factors(m) < n):
-        m = triangle(m + 1)
+    while (num_factors(next_triangle) < n):
+        m += 1
+        next_triangle = triangle(m)
 
-    return m
+    return next_triangle
 
-# new def with integration
 def triangle(n):
-    return (n**2 + 1)/2
+    return (n**2 + n)/2
 
 def num_factors(n):
 
     num = 0  # number of factors
     cur = 1  # current factor
 
-    while cur < sqrt(n):
+    while cur**2 < n:
         if n % cur == 0: num += 2
         cur += 1
 
-    if n % sqrt(n) == 0: num += 1
+    if cur**2 == n: num += 1
 
     return num
 
-
-first_triangle_with_div(500)
+print(first_triangle_with_div(500))
