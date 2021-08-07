@@ -11,12 +11,7 @@ def first_triangle_with_div(n):
 
 # new def with integration
 def triangle(n):
-    if n <= 1:
-        return 1
-    else:
-        print(triangle(n-1) + n)
-        return triangle(n-1) + n
-
+    return (n**2 + 1)/2
 
 def num_factors(n):
 
