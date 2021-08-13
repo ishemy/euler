@@ -13,7 +13,7 @@ def parse_int(n, digs):
     i = 0
 
     while (1):
-        arr[i] = [i*digs:i*digs+digs]
+        arr[i] = n[i*digs:i*digs+digs]
         i += 1
 
 
