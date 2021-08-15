@@ -12,11 +12,10 @@ def parse_int(n, digs):
     arr = []
     i = 0
 
-    print(n)
-    while (len(n) < digs):
-        arr[i] = int(n[i*digs:i*digs+digs])
-        print(arr[i])
-        n = n[i*digs:]
+    while (len(n) >= digs):
+
+        arr.append(int(n[0:digs]))
+        n = n[digs+1:]
         i += 1
 
     return arr
