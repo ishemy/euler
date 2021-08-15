@@ -2,7 +2,7 @@
 
 def first_n_digs(arr, n):
     result = sum(arr)
-    while (result > 9999999999):
+    while (result > 10**n - 1):
         result /= 10
 
     return result
@@ -11,9 +11,11 @@ def first_n_digs(arr, n):
 def parse_int(n, digs):
     arr = []
     i = 0
+    strn = str(n)
 
-    while (1):
-        arr[i] = n[i*digs:i*digs+digs]
+    while (len(strn) < digs):
+        arr[i] = int(strn[i*digs:i*digs+digs])
+        strn = strn[i*digs:]
         i += 1
 
 
