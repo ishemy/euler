@@ -10,12 +10,15 @@ def collatz_chain(n):
 # naive solution
 def longest_chain_under(n):
     longest = -1
+    result = 0
 
     for i in range(n):
         chain = collatz_chain(i)
-        if chain > longest: longest = chain
+        if chain > longest:
+            longest = chain
+            result = i
 
-    return longest
+    return result
 
 
 print(longest_chain_under(1000000))
